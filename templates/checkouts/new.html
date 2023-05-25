@@ -42,7 +42,18 @@
     container: '#bt-dropin',
     paypal: {
       flow: 'vault'
-    }
+    },
+    venmo: {
+      allowDesktopWebLogin: true,
+      allowNewBrowserTab: false,
+      allowWebviews: true,
+      allowDesktop: true,
+      ignoreHistoryChanges: false,
+      requireManualReturn: false,
+      useRedirectForIOS: false,
+      paymentMethodUsage: "multi_use",
+      mobileWebFallBack: true
+    },
   }, function (createErr, instance) {
     form.addEventListener('submit', function (event) {
       event.preventDefault();
