@@ -41,19 +41,26 @@
     authorization: client_token,
     container: '#bt-dropin',
     paypal: {
-      flow: 'vault'
+       flow: 'checkout', // Required
+       amount: '100', // Required
+       currency: 'USD' // Required, must match the currency passed in with loadPayPalSDK
     },
     venmo: {
-      allowDesktopWebLogin: true,
-      allowNewBrowserTab: false,
-      allowWebviews: true,
-      allowDesktop: true,
-      ignoreHistoryChanges: false,
-      requireManualReturn: false,
-      useRedirectForIOS: false,
-      paymentMethodUsage: "multi_use",
-      mobileWebFallBack: true
+       allowDesktop: true,
+       allowDesktopWebLogin: true,
+        allowNewBrowserTab: false,
+        paymentMethodUsage: "multi_use",
+        totalAmount: "10.00",
     },
+    applePay:{
+      displayName:'Acme store',
+      paymentRequest:{
+        total: {
+          label: 'My Store',
+          amount: '19.99'
+        }
+       }
+    }
   }, function (createErr, instance) {
     form.addEventListener('submit', function (event) {
       event.preventDefault();
