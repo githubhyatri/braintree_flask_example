@@ -60,6 +60,13 @@
           amount: '19.99'
         }
        }
+    },
+    googlePay:{
+    transactionInfo: {
+        currencyCode: 'USD',
+        totalPriceStatus: 'FINAL',
+        totalPrice: '100.00'
+      }
     }
   }, function (createErr, instance) {
     form.addEventListener('submit', function (event) {
